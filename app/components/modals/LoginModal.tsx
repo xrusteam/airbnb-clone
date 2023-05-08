@@ -27,6 +27,11 @@ const LoginModal = () => {
   const [isLoading, setIsLoading] =
     useState(false);
 
+  const toggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [registerModal, loginModal]);
+
   const {
     register,
     handleSubmit,
@@ -105,12 +110,12 @@ const LoginModal = () => {
       />
       <div className="text-neutral-500 flex items-center justify-center text-center mt-4 font-light">
         <div className="flex flex-row items-center gap-2">
-          <p>Already have an account?</p>
+          <p>First time in Airbnb?</p>
           <span
-            onClick={registerModal.onClose}
+            onClick={toggle}
             className="text-neutral-900 cursor-pointer hover:underline"
           >
-            Login
+            Create an account
           </span>
         </div>
       </div>
