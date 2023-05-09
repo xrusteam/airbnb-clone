@@ -9,7 +9,15 @@ export default async function getListings() {
         },
       });
 
-    return listings;
+    const safeListings = listings.map(
+      (listing) => ({
+        ...listing,
+        createdAt:
+          listing.createdAt.toISOString(),
+      })
+    );
+
+    return safeListings;
   } catch (error) {
     throw new Error('Error fetched listings');
   }

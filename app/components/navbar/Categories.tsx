@@ -118,7 +118,6 @@ const Categories = () => {
   const category = params?.get('category');
 
   const isMainPage = pathname === '/';
-  console.log(pathname);
   if (!isMainPage) {
     return null;
   }
