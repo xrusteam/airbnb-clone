@@ -10,6 +10,7 @@ import { format } from 'date-fns';
 
 import {
   SafeListing,
+  SafeReservation,
   SafeUser,
 } from '@/app/types';
 import useCountries from '@/app/hooks/useCountries';
@@ -19,7 +20,7 @@ import Button from '../Button';
 
 interface ListingCardProps {
   data: SafeListing;
-  reservation?: Reservations;
+  reservation?: SafeReservation;
   onAction?: (id: string) => void;
   disabled?: boolean;
   actionLabel?: string;
